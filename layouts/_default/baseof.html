@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html
+  style="font-size: 16px"
+  lang="{{ .Site.LanguageCode }}"
+  class="bg-white antialiased"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }}</title>
+    <link href="/css/main.css" rel="stylesheet" />
+  </head>
+  <body class="overflow-y-scroll">
+    <main class="relative w-full max-w-screen-2xl mx-auto"> {{ block "main" . }}{{ .Content }}{{ end }}</main>
+  </body>
+</html>

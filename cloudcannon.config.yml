@@ -1,0 +1,10 @@
+collections_config:
+  home:
+    _enabled_editors:
+      - content
+    path: content/
+
+collection_groups:
+  - collections:
+      - home
+    heading: "Content"

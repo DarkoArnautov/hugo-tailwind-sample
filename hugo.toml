@@ -1,0 +1,13 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+
+# Metadata for SEO and social sharing
+description = "This is a test."
+author = "Darko Anautov"
+
+# Enable RSS feed (optional)
+enableRSS = true
+
+# Enable Sitemap (optional)
+enableSitemap = true

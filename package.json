@@ -1,0 +1,22 @@
+{
+  "name": "hugo-tailwind-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"hugo server --buildDrafts\" \"tailwindcss -i ./assets/css/main.css -o ./static/css/main.css --watch\"  --kill-others"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.1.0",
+    "@fontsource/inter": "^5.1.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
