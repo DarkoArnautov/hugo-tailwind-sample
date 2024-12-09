@@ -1,28 +1,29 @@
-<header class="flex w-full max-w-[1440px] justify-between items-center h-14 sm:h-20 py-4 px-4 md:px-8 lg:px-12 bg-white">
+{{ $headerdPage := .Site.GetPage "header" }}
+<header class="flex w-full max-w-[1440px] justify-between items-center h-14 sm:h-20 py-4 px-4 md:px-8 lg:px-12 bg-white z-30">
   <!-- Logo -->
   <div class="w-[226px] h-5">
-      <img src="{{ "images/logo.png" | relURL }}" class="w-[113.35px] h-full" alt="{{ .Site.Title }}" />
+    <img src="{{ $headerdPage.Params.logo }}" class="w-[113.35px] h-full" alt="Company Logo" />
   </div>
 
   <!-- Navigation Links -->
   <nav class="hidden w-full lg:flex lg:max-w-[500px] xl:max-w-[660px] justify-between items-center text-[#0B0C0D] font-medium text-base leading-5 font-inter">
-    {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ range $headerdPage.Params.navigation }}
+      <a href="{{ .link }}" >{{ .name }}</a>
     {{ end }}
-</nav>
+  </nav>
 
   <!-- Buttons -->
   <div class="hidden md:flex items-center h-12 gap-x-3 font-semibold text-base leading-5 text-center font-inter">
-      <button class="rounded-xl px-6 py-[14px] bg-[#E6F5F6] text-[#05747A]">
-          Login
-      </button>
-      <button class="rounded-xl px-6 py-[14px] bg-[#05747A] text-white">
-          Start Trial
-      </button>
+    <button class="rounded-xl px-6 py-[14px] bg-[#E6F5F6] text-[#05747A]">
+      {{ $headerdPage.Params.buttons.login }}
+    </button>
+    <button class="rounded-xl px-6 py-[14px] bg-[#05747A] text-white">
+      {{ $headerdPage.Params.buttons.startTrial }}
+    </button>
   </div>
 
   <!-- Hamburger Menu for Small Screens -->
-  <button class="md:hidden">
-      <img src="{{ "images/menu.svg" | relURL }}" class="w-6 h-6" />
+  <button class="md:hidden"> 
+    <img src="{{ $headerdPage.Params.hamburgerMenuImage }}" class="w-6 h-6" />
   </button>
 </header>

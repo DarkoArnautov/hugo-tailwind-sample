@@ -1,20 +1,13 @@
+{{ $resultPage := .Site.GetPage "result" }}
 <section class="w-full px-4 lg:px-8 xl:px-12 mt-12 md:mt-24 flex flex-col">
-  <!-- Section Title -->
-  <p class="w-full lg:max-w-[1002px] font-bold text-[28px] md:text-4xl leading-8 md:leading-10 text-[#0B0C0D] font-dmsans">
-    {{ .Site.Params.caseStudies.title }}
-  </p>
-  
-  <!-- Grid of Case Studies -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 gap-x-[10px] gap-y-6">
-    {{ range seq 1 6 }}
-    {{ partial "resultItem.html" . }}
-    {{ end }}
-  </div>
-  
-  <!-- Load More Button -->
-  <div class="flex justify-center mt-[26px] sm:mt-14">
-    <button class="rounded-xl px-6 py-3 sm:py-[14px] bg-[#E6F5F6] font-semibold text-[14px] sm:text-base leading-[17px] sm:leading-5 text-center text-[#05747A] font-inter">
-      {{ .Site.Params.caseStudies.load_more_text }}
-    </button>
-  </div>
-</section>
+    <p class="w-full lg:max-w-[1002px] font-bold text-[28px] md:text-4xl leading-8 md:leading-10 text-[#0B0C0D] font-dmsans">{{ $resultPage.Params.description }}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 gap-x-[10px] gap-y-6">
+      
+      {{ range  $resultPage.Params.results }}
+        {{ partial "resultItem.html" . }}
+      {{ end }}
+    </div>
+    <div class="flex justify-center mt-[26px] sm:mt-14">
+      <button class="rounded-xl px-6 py-3 sm:py-[14px] bg-[#E6F5F6] font-semibold text-[14px] sm:text-base leading-[17px] sm:leading-5 text-center text-[#05747A] font-inter">{{$resultPage.Params.button }}</button>
+    </div>
+  </section>

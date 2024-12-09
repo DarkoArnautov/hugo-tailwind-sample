@@ -10,8 +10,9 @@
     <title>{{ .Title }}</title>
     <link href="/css/main.css" rel="stylesheet" />
   </head>
-  <body class="overflow-y-scroll">
-    <
-    <main class="relative w-full max-w-screen-2xl mx-auto"> {{ block "main" . }}{{ .Content }}{{ end }}</main>
+  <body class="overflow-y-scroll w-full max-w-screen-2xl mx-auto">
+    {{ partial "header.html" . }}
+    <main class="relative z-10"> {{ block "main" . }}{{ .Content }}{{ end }}</main>
+    {{ partial "footer.html" . }}
   </body>
 </html>

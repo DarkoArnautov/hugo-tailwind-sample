@@ -1,10 +1,35 @@
 collections_config:
-  home:
+  feature:
     _enabled_editors:
       - content
-    path: content/
+    path: content/feature.md  # The path for the feature collection
+  footer:
+    _enabled_editors:
+      - content
+    path: content/footer.md  # The path for the footer collection
+  header:
+    _enabled_editors:
+      - content
+    path: content/header.md  # The path for the header collection
+  result:
+    _enabled_editors:
+      - content
+    path: content/result.md  # The path for the result collection
+  revenue:
+    _enabled_editors:
+      - content
+    path: content/revenue.md  # The path for the revenue collection
+  trusted:
+    _enabled_editors:
+      - content
+    path: content/trusted.md  # The path for the trusted collection
 
 collection_groups:
   - collections:
-      - home
-    heading: "Content"
+      - feature
+      - footer
+      - header
+      - result
+      - revenue
+      - trusted
+    heading: "Content"  # Group all collections under the 'Content' heading
